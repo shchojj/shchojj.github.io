@@ -332,6 +332,332 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shchojj.github.io/2018/03/31/使用-TensorFlow-的起始步骤/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shcho">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fanren">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/31/使用-TensorFlow-的起始步骤/" itemprop="url">使用 TensorFlow 的起始步骤</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-31T22:16:13+08:00">2018-03-31</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="使用-TensorFlow-的起始步骤"><a href="#使用-TensorFlow-的起始步骤" class="headerlink" title="使用 TensorFlow 的起始步骤"></a>使用 TensorFlow 的起始步骤</h1><p>标签（空格分隔）： 未分类</p>
+<hr>
+<p><img src="https://shchojj-1256386028.cos.ap-shanghai.myqcloud.com/TensorFlow%E5%B7%A5%E5%85%B7%E5%8C%85%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" alt="TensorFlow 工具包层次结构"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>工具包</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Estimator (tf.estimator)</td>
+<td style="text-align:center">高级 OOP API。</td>
+</tr>
+<tr>
+<td>tf.layers/tf.losses/tf.metrics</td>
+<td style="text-align:center">用于常见模型组件的库。</td>
+</tr>
+<tr>
+<td>TensorFlow</td>
+<td style="text-align:center">低级 API</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="TensorFlow"><a href="#TensorFlow" class="headerlink" title="TensorFlow"></a>TensorFlow</h2><p> 由以下两个组件组成：</p>
+<ul>
+<li>图协议缓冲区(类似于Java编译器)</li>
+<li>执行（分布式）图的运行时（类似于JVM）<br>较高级别的抽象层更易于使用，但（设计方面）不够灵活。</li>
+</ul>
+<hr>
+<h2 id="tf-estimator-API"><a href="#tf-estimator-API" class="headerlink" title="tf.estimator API"></a>tf.estimator API</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set up a linear classifier.</span></span><br><span class="line">classifier = tf.estimator.LinearClassifier()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Train the model on some example data.</span></span><br><span class="line">classifier.train(input_fn=train_input_fn, steps=<span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use it to predict.</span></span><br><span class="line">predictions = classifier.predict(input_fn=predict_input_fn)</span><br></pre></td></tr></table></figure>
+<hr>
+<p>超参数：</p>
+<ul>
+<li>steps：是指训练迭代的总次数。一步计算一批样本产生的损失，然后使用该值修改模型的权重一次。</li>
+<li>batch size：是指单步的样本数量（随机选择）。</li>
+</ul>
+<script type="math/tex; mode=display">total number of trained examples=batch size * steps</script><ul>
+<li>periods：控制报告的粒度<script type="math/tex; mode=display">number of training examples in each period=\frac{batch size*steps}{periods}</script></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shchojj.github.io/2018/03/31/降低损失-Reducing-Loss/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shcho">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fanren">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/31/降低损失-Reducing-Loss/" itemprop="url">降低损失 (Reducing Loss)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-31T18:07:38+08:00">2018-03-31</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="如何降低损失"><a href="#如何降低损失" class="headerlink" title="如何降低损失"></a>如何降低损失</h1><hr>
+<h2 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h2><p>不断迭代，直到总体损失不再变化或至少变化极其缓慢为止。这时候，我们可以说该模型已收敛。<br><img src="https://shchojj-1256386028.cos.ap-shanghai.myqcloud.com/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.png" alt="机器学习"></p>
+<hr>
+<h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><p>凸形问题只有一个最低点；即只存在一个斜率正好为 0的位置。这个最小值就是损失函数收敛之处。<br><img src="https://shchojj-1256386028.cos.ap-shanghai.myqcloud.com/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.png" alt="此处输入图片的描述"></p>
+<ul>
+<li>$(y-y’)^2$相对权重$w$和偏差$b$的导数表明样本的损失变化</li>
+<li>降低损失的方向上反复取小步（负梯度步长）</li>
+<li>梯度是偏导数的矢量；它可以让您了解哪个方向距离目标“更近”或“更远”。</li>
+</ul>
+<hr>
+<blockquote>
+<p>学习速率</p>
+</blockquote>
+<p>学习速率：步长。<br><strong>超参数</strong>是编程人员在机器学习算法中用于调整的旋钮。</p>
+<ol>
+<li>学习速率过低：费时。<br><img src="https://shchojj-1256386028.cos.ap-shanghai.myqcloud.com/%E4%BD%8E%E5%AD%A6%E4%B9%A0%E9%80%9F%E7%8E%87.png" alt="此处输入图片的描述"></li>
+<li>学习速率过高：永远在U形曲线的底部随意弹跳。<br><img src="https://shchojj-1256386028.cos.ap-shanghai.myqcloud.com/%E9%AB%98%E5%AD%A6%E4%B9%A0%E9%80%9F%E7%8E%87.png" alt="此处输入图片的描述"></li>
+<li>金发姑娘学习速率：损失函数的梯度较小，则可以放心地试着采用更大的学习速率。<br><img src="https://shchojj-1256386028.cos.ap-shanghai.myqcloud.com/%E9%87%91%E5%8F%91%E5%A7%91%E5%A8%98%E5%AD%A6%E4%B9%A0%E7%8E%87.png" alt="此处输入图片的描述"></li>
+</ol>
+<hr>
+<h2 id="权重初始化"><a href="#权重初始化" class="headerlink" title="权重初始化"></a>权重初始化</h2><ul>
+<li>凸形：权重从任意位置开始，只有一个最低点。</li>
+<li>非凸形：有多个最低点，很大程度上取决于初始值。</li>
+</ul>
+<hr>
+<h2 id="SGD-和小批量梯度下降法"><a href="#SGD-和小批量梯度下降法" class="headerlink" title="SGD 和小批量梯度下降法"></a>SGD 和小批量梯度下降法</h2><blockquote>
+<p><strong>批量</strong>指的是用于在<strong>单次迭代</strong>中计算梯度的样本总数。</p>
+</blockquote>
+<ol>
+<li>超大批量，则单次迭代就可能要花费很长时间进行计算。 </li>
+<li>批量大小越大，出现冗余的可能性就越高。</li>
+<li>冗余可能有助于消除杂乱的梯度，但超大批量所具备的预测价值往往并不比大型批量高。</li>
+</ol>
+<ul>
+<li>随机梯度下降法：一次抽取一个样本。</li>
+<li>小批量梯度下降法：每批包含 10-1000 个样本。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://shchojj.github.io/2018/03/31/加入公式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1508,7 +1834,7 @@ mathjax: true
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1785,9 +2111,13 @@ mathjax: true
   
     
       
+        
+      
     
       
-        
+    
+      
+    
       
     
       
