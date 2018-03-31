@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
@@ -163,7 +163,7 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -174,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
@@ -417,7 +417,7 @@
 
       
         <p>转载：<a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">https://www.cnblogs.com/fengxiongZz/p/7707219.html</a></p>
-<p>1、安装Node.js+Git。<br>2、创建github.io<br>3、创建文件夹，安装Hexo<br>   a、输入npm install hexo -g，开始安装Hexo<br>   b、输入hexo -v，检查hexo是否安装成功<br>   c、输入hexo init，初始化该文件夹<br>   d、输入npm install，安装组件<br>   f、输入hexo g，首次体验Hexo<br>   g、输入hexo s，开启服务器<br>4、将Hexo与Github page绑定<br>   a、文件夹里面鼠标右键，点击Git Base Here<br>5、配置Deployment，在其文件夹中，找到_config.yml文件，修改repo值（在末尾）<br>   deploy:<br>     type: git<br>     repository: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:yourGit/yourGit.github.io.git<br>6、新建博客，hexo new post “博客名”<br>   在文件夹_posts目录下将会看到已经创建的文件。<br>7、在生成以及部署文章之前，需要安装一个扩展：<br>   npm install hexo-deployer-git –save<br>8、生成以及部署：hexo d -g<br>9、开启hexo：hexo s<br>   链接 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>.<br>10、查看博客：http://用户名.github.io</p>
+<p>1、安装Node.js+Git。<br>2、创建github.io<br>3、创建文件夹，安装Hexo<br>   a、输入npm install hexo -g，开始安装Hexo<br>   b、输入hexo -v，检查hexo是否安装成功<br>   c、输入hexo init，初始化该文件夹<br>   d、输入npm install，安装组件<br>   f、输入hexo g，首次体验Hexo<br>   g、输入hexo s，开启服务器<br>4、将Hexo与Github page绑定<br>   a、文件夹里面鼠标右键，点击Git Base Here<br>5、配置Deployment，在其文件夹中，找到_config.yml文件，修改repo值（在末尾）<br>   deploy:<br>     type: git<br>     repository: git@github.com:yourGit/yourGit.github.io.git<br>6、新建博客，hexo new post “博客名”<br>   在文件夹_posts目录下将会看到已经创建的文件。<br>7、在生成以及部署文章之前，需要安装一个扩展：<br>   npm install hexo-deployer-git —save<br>8、生成以及部署：hexo d -g<br>9、开启hexo：hexo s<br>   链接 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>.<br>10、查看博客：<a href="http://用户名.github.io" target="_blank" rel="noopener">http://用户名.github.io</a></p>
 
       
     </div>
@@ -534,7 +534,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -765,7 +765,24 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
@@ -809,6 +826,13 @@
   
 
   
+  
+
+  
+  
+
+  
+
 
   
   
