@@ -546,8 +546,195 @@ mathjax: true
       
         
           
-            <p>aaaa</p>
-<script type="math/tex; mode=display">\sum_{i=1}^n a_i=0</script><script type="math/tex; mode=display">lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|<\epsilon)=1, i=1,...,n</script>
+            <h2 id="机器学习主要术语"><a href="#机器学习主要术语" class="headerlink" title="机器学习主要术语"></a>机器学习主要术语</h2><hr>
+<blockquote>
+<p>(监督式）机器学习:通过学习如何组合输入信息来对从未见过的数据做出有用的预测.</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>标签:要预测的事物，即简单线性回归中的 y 变量。<script type="math/tex">\{y_1,y_2,\ldots,y_n \}</script></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>特征:输入变量，即简单线性回归中的 x 变量。</p>
+<script type="math/tex; mode=display">\{x_1,x_2,\ldots,x_n \}</script></blockquote>
+<hr>
+<blockquote>
+<p>样本：数据的特定实例：<strong>x</strong>。</p>
+</blockquote>
+<ol>
+<li>有标签样本：同时包含特征和标签。<strong>用来训练模型</strong>。<br>labeled examples: {features, label}: (x, y)</li>
+<li><p>无标签样本：包含特征，但不包含标签。即：</p>
+<p>unlabeled examples: {features, ?}: (x, ?)</p>
+</li>
+</ol>
+<hr>
+<blockquote>
+<p>模型:定义特征与标签之间的关系。<br>生命周期两个阶段：</p>
+</blockquote>
+<ul>
+<li><strong>训练</strong>：创建或学习模型。向模型展示有标签样本，让模型逐渐学习特征与标签之间的关系。</li>
+<li><strong>推断</strong>：将训练后的模型应用于无标签样本。用训练后的模型来做出有用的预测 (y’)</li>
+</ul>
+<hr>
+<blockquote>
+<p>回归与分类</p>
+<ul>
+<li>回归模型：预测连续值。</li>
+<li>分类模型：预测离散值。</li>
+</ul>
+</blockquote>
+<hr>
+<p>标签：量化的指标。<br>特征：可量化的。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shchojj.github.io/2018/03/31/线性回归/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="shcho">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fanren">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/31/线性回归/" itemprop="url">线性回归</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-31T07:50:21+08:00">2018-03-31</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><p>标签（空格分隔）： 机器学习速成课程</p>
+<hr>
+<blockquote>
+<p>线性回归</p>
+</blockquote>
+<ol>
+<li>数据绘制成图表，了解下数据的分布</li>
+<li>绘制一条直线来近似地表示这种关系。<script type="math/tex">y'=w_1x_1+b</script><br>$y’$ 标签（理想输出），$w_1$特征1权重，$x_1$特征（已知输入），$b$偏差（截距）。</li>
+<li>用新的$x_1$推断（预测）$y’$。</li>
+<li>多个特征来表示更复杂的模型。<script type="math/tex">y'=w_1x_1+w_2x_2+w_3x_3+b</script></li>
+</ol>
+<hr>
+<blockquote>
+<p>训练与损失</p>
+</blockquote>
+<p><strong>训练</strong>模型：通过有标签样本来学习（确定）所有权重和偏差的理想值<br><strong>经验风险最小化</strong>：检查多个样本并尝试找出可最大限度地减少损失的模型。<br><strong>损失</strong>：对于单个样本而言模型预测的准确程度的一个数值。<br>训练模型的<strong>目标</strong>：从所有样本中找到一组平均损失“较小”的权重和偏差。</p>
+<p><strong><em>平方损失（$L_2$ 损失）</em></strong>：一种常见的损失函数.</p>
+<p>$= the square of the difference between the label and the prediction$<br>$= (observation - prediction(x))^2$<br>$= (y - y’)^2$</p>
+<p><strong><em>均方误差 (MSE)</em></strong>:每个样本的平均平方损失.</p>
+<script type="math/tex; mode=display">MSE=\frac{1}{N} \sum_{(x,y)\in D}(y - prediction(x))^2</script><ul>
+<li>$(x,y)$：样本.<br> $x$：模型预测时的特征集。<br> $y$：样本标签。</li>
+<li>$prediction(x)$: 权重*特征集$x$+偏差的函数</li>
+<li>$D$：多标签样本集$(x,y)$</li>
+<li>$N$: $D$中样本个数。</li>
+</ul>
+
           
         
       
@@ -1321,7 +1508,7 @@ mathjax: true
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1601,6 +1788,8 @@ mathjax: true
     
       
         
+      
+    
       
     
       
